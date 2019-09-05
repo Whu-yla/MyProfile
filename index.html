@@ -19,10 +19,8 @@
     <!-- /font links -->
     <!--    head icon links-->
     <link rel="icon" href="./images/icon.png" type="img/x-ico"/>
-    <!--    /head icon links-->
-    <!-- js files -->
-    <script src="js/modernizr.custom.js"></script>
-    <!-- /js files -->
+    <!--    change the alter style-->
+    <link rel="stylesheet" type="text/css" href="./css/sweetalert.css">
     <!-- Demo styles -->
     <style>
         body {
@@ -69,7 +67,7 @@
                         <li class="active"><a href="#">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact">MessageBoard</a></li>
                     </ul>
                 </div>
             </div>
@@ -161,78 +159,114 @@
     </div>
 </div>
 <!-- Gallery -->
-<!-- footer -->
+<!-- contact -->
 <div class="contact-me" id="contact">
-    <h3 class="text-center slideanim">Contact</h3>
+    <h3 class="text-center slideanim">MessageBoard</h3>
     <div class="container">
-        <footer>
-            <div class="row">
-                <div class="col-md-6 slideanim">
-                    <div class="contact-details">
-                        <form id="messageInformation" method="post">
-                            <div class="row">
-                                <div class="col-sm-12 form-group">
-                                    <input class="form-control" id="name" name="name" placeholder="Your Name(*必填)"
-                                           type="text"
-                                           required>
-                                </div>
-                                <div class="col-sm-12 form-group">
-                                    <input class="form-control" id="email" name="email" placeholder="Your Email(非必填)"
-                                           type="email">
-                                </div>
+
+        <div class="row">
+            <div class="col-md-6 slideanim">
+                <div class="contact-details">
+                    <form id="messageInformation" method="post">
+                        <div class="row">
+                            <div class="col-sm-12 form-group">
+                                <input class="form-control" id="name" name="name" placeholder="Your Name(*必填)"
+                                       type="text"
+                                       required>
                             </div>
-                            <textarea class="form-control" id="comments" name="comments" placeholder="Comment"
-                                      rows="5"></textarea><br>
-                            <div class="row">
-                                <div class="col-sm-4 form-group">
-                                    <label for="isAnonymous"></label><input type="checkbox" id="isAnonymous"
-                                                                            value="isAnonymous"> 是否匿名 <br>
-                                </div>
-                                <div class="col-sm-8 form-group">
-                                    <button href="javascript:void(0);" class="btn btn-default btn-lg" type="submit"
-                                            id="send" title="发送" onclick="save()">Send <span
-                                            class="glyphicon glyphicon-menu-right"></span></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-md-6 slideanim">
-                    <div class="contact-info">
-                        <h4>Contact Info</h4>
-                        <div class="footer-info">
-                            <div>
-                                <i class="glyphicon glyphicon-globe"></i>
-                                <p class="p1">WuHan University</p>
-                                <p class="p2">Hubei , China</p>
-                            </div>
-                            <div>
-                                <i class="glyphicon glyphicon-phone-alt"></i>
-                                <p class="p1">+132****4741</p>
-                                <p class="p2">+15676246849</p>
-                            </div>
-                            <div>
-                                <i class="glyphicon glyphicon-envelope"></i>
-                                <p class="p1"><a href="mailto:Yilean@whu.edu.cn">Yilean@whu.edu.cn</a></p>
-                                <p class="p2"><a href="mailto:Yilean@163.com">Yilean@163.com</a></p>
+                            <div class="col-sm-12 form-group">
+                                <input class="form-control" id="email" name="email" placeholder="Your Email(非必填)"
+                                       type="email">
                             </div>
                         </div>
-                        <h5>My Chat Subscription</h5>
-                        <a href="images/qrcode_for_gh_a4261ca15905_430.jpg" title="My Qrcode"><img
-                                src="images/qrcode_for_gh_a4261ca15905_258 (2).jpg" alt="example-4"
-                                class="img-responsive slideanim"></a>
+                        <textarea class="form-control" id="comments" name="comments" placeholder="有什么想对我说的？畅所欲言吧！"
+                                  rows="5"></textarea><br>
+                        留言会公开显示，请勿在留言内容写下微信号等私人联系方式，谨防诈骗。如果你不想发布公开留言，也可以发送邮件到 <a href="mailto:whu_yla@163.com">whu_yla@163.com</a>
+                        与我联系。
+                        <div class="row" style="margin-top: 10px">
+                            <div class="col-sm-4 form-group">
+                                <label for="isAnonymous"></label><input type="checkbox" id="isAnonymous"
+                                                                        value="isAnonymous"> 是否匿名 <br>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="col-sm-12 form-group" style="padding-left: 0">
+                        <button href="javascript:void(0);" class="btn btn-success btn-lg" type="submit"
+                                id="send" onclick="save()" data-toggle="tooltip" data-placement="top" title="发送">
+                            Send <span
+                                class="glyphicon glyphicon-menu-right"></span></button>
                     </div>
                 </div>
             </div>
-            <hr>
-            <div class="copyright">
-                <p class="text-center">Copyright &copy; Hugo 2018-2019</p>
+            <div class="col-md-6 slideanim">
+                <div class="contact-info">
+                    <div>
+                        <h4 style="text-align: center">留言板</h4>
+                    </div>
+                    <div><p style="text-align: center">2019-08-13 19:22:11</p>
+                        <p style="text-align: center">易乐安</p>
+                        <p style="text-align: center">厉害了哦</p>
+                    </div>
+                    <div><p style="text-align: center">2019-08-13 19:22:11</p>
+                        <p style="text-align: center">易乐安</p>
+                        <p style="text-align: center">厉害了哦</p>
+                    </div>
+                    <div><p style="text-align: center">2019-08-13 19:22:11</p>
+                        <p style="text-align: center">易乐安</p>
+                        <p style="text-align: center">厉害了哦</p>
+                    </div>
+
+
+                    <!--                        <h4>Contact Info</h4>-->
+                    <!--                        <div class="footer-info">-->
+                    <!--                            <div>-->
+                    <!--                                <i class="glyphicon glyphicon-globe"></i>-->
+                    <!--                                <p class="p1">WuHan University</p>-->
+                    <!--                                <p class="p2">Hubei , China</p>-->
+                    <!--                            </div>-->
+                    <!--                            <div>-->
+                    <!--                                <i class="glyphicon glyphicon-phone-alt"></i>-->
+                    <!--                                <p class="p1">+132****4741</p>-->
+                    <!--                                <p class="p2">+15676246849</p>-->
+                    <!--                            </div>-->
+                    <!--                            <div>-->
+                    <!--                                <i class="glyphicon glyphicon-envelope"></i>-->
+                    <!--                                <p class="p1"><a href="mailto:Yilean@whu.edu.cn">Yilean@whu.edu.cn</a></p>-->
+                    <!--                                <p class="p2"><a href="mailto:Yilean@163.com">Yilean@163.com</a></p>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                        <h5>My Chat Subscription</h5>-->
+                    <!--                        <a href="images/qrcode_for_gh_a4261ca15905_430.jpg" title="My Qrcode"><img-->
+                    <!--                                src="images/qrcode_for_gh_a4261ca15905_258 (2).jpg" alt="example-4"-->
+                    <!--                                class="img-responsive slideanim"></a>-->
+                </div>
             </div>
-            <a href="#myPage" title="To Top" id="toTop"><span class="glyphicon glyphicon-chevron-up"></span></a>
-        </footer>
+            <div style="text-align: center"><a href="#">查看全部留言 ></a></div>
+        </div>
+        <hr>
     </div>
 </div>
-<!-- /footer -->
+<!-- /contact -->
+<!--media-->
+<div class="media" id="media">
+    <div style="text-align: center" class="mediaWelcome" id="mediaWelcome">想了解更多？<br>
+        你需要的都在这里。
+    </div>
+    <div>
+        <div class="col-sm-4 form-group">社交网络<ul><i class="glyphicon glyphicon-globe"></i></ul></div>
+        <div class="col-sm-4 form-group">2</div>
+        <div class="col-sm-4 form-group">3</div>
+    </div>
+</div>
+<!--/media-->
+<!--footer-->
+<footer>
+    <div class="copyright">
+        <p class="text-center">Copyright &copy; Hugo 2018-2019</p>
+    </div>
+    <a href="#myPage" title="To Top" id="toTop"><span class="glyphicon glyphicon-chevron-up"></span></a>
+</footer>
+<!--/footer-->
 <!--toTop-->
 <div>
     <a href="javascript:void(0)" id="btn" style="display: none"><img src="images/icons8-scroll-up-26.png">&nbsp&nbsp返回顶部</a>
@@ -303,7 +337,11 @@
 </script>
 <!-- Swiper JS -->
 <script src="./js/swiper.min.js"></script>
-
+<!-- js files -->
+<script src="js/modernizr.custom.js"></script>
+<!-- /js files -->
+<!--change the style of alter-->
+<script type="text/javascript" src="./js/sweetalert-dev.js"></script>
 <!-- Initialize Swiper -->
 <script>
     var swiper = new Swiper('.swiper-container', {

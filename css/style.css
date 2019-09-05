@@ -8,31 +8,34 @@ body {
 a {
     text-decoration: none;
     out-line: none;
-    color:#000000;
+    color: #000000;
 }
-form{
+
+form {
     font-size: larger;
     font-weight: bolder;
 }
+
 /*返回顶部<a>的样式*/
-#btn
-{
+#btn {
     position: fixed;
-    bottom:50px;
+    bottom: 50px;
     right: 50px;
 }
 
-.myskills-img{
+.myskills-img {
     /*-webkit-transition: 5s;*/
     /*-webkit-transition: -webkit-transform 5s ease-out;*/
     /*transition: transform 5s ease-out;*/
     /*-moz-transition: -moz-transform5s ease-out;*/
 }
-.myskills-img:hover{
+
+.myskills-img:hover {
     /*transform: rotateZ(360deg);*/
     /*-webkit-transform: rotateZ(360deg);*/
     /*-moz-transform: rotateZ(360deg);*/
 }
+
 body a {
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
@@ -800,6 +803,14 @@ footer span.glyphicon.glyphicon-chevron-up {
 }
 
 /*-- /Footer --*/
+/*media*/
+#mediaWelcome {
+    font-family: 微软雅黑 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+/*/media*/
 /*-- sliding --*/
 .slideanim {
     visibility: hidden;

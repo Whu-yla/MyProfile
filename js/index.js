@@ -81,9 +81,10 @@ function curentTime() {
 function save() {
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
-    var comment = document.getElementById('comment').value;
+    var comment = document.getElementById('comments').value;
     var time = curentTime();
-    var inputJson = "{" + "\"" + "name" + "\"" + ":" + name + "," + "\"" + "email" + "\"" + ":" + email + "," + "\"" + "comment" + "\"" + ":" + comment + "," + "\"" + time + "\"" + ":" + time;
+
+    var inputJson = "{" + "\"" + "name" + "\"" + ":" + "\"" + name + "\"" + "," + "\"" + "email" + "\"" + ":" + "\"" + email + "\"" + "," + "\"" + "comment" + "\"" + ":" + "\"" + comment + "\"" + "," + "\"" + "time" + "\"" + ":" + "\"" + time + "\"" + "}";
     $.ajax({
         type: "post",
         async: false,            //同步或异步请求
@@ -93,10 +94,12 @@ function save() {
         crossDomain: true,
         dataType: "json",        //返回数据形式为json
         success: function () {
-            alert("success");
+            swal("成功！", "send succeed",
+                "success");
         },
         error: function () {
-            alert("false");
+            swal("失败！", "send failed",
+                "error");
         },
     })
 }

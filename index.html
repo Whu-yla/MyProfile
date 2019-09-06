@@ -86,12 +86,6 @@
                 <span class="line1"></span>
                 <p>热爱旅行、摄影、编程</p>
                 <span class="line2"></span>
-                <div class="social-icons">
-                    <a href="javaScript:void(0)" onclick="window.open('https://twitter.com/whu_yla')"><span
-                            class="twitter"></span></a>
-                    <a href="javaScript:void(0)" onclick="window.open('https://github.com/Whu-yla')"><span
-                            class="github"></span></a>
-                </div>
             </div>
         </li>
         <li>
@@ -99,15 +93,10 @@
                 <span class="line1"></span>
                 <p>(Love,life]</p>
                 <span class="line2"></span>
-                <div class="social-icons">
-                    <a href="javaScript:void(0)" onclick="window.open('https://twitter.com/whu_yla')"><span
-                            class="twitter"></span></a>
-                    <a href="javaScript:void(0)" onclick="window.open('https://github.com/Whu-yla')"><span
-                            class="github"></span></a>
-                </div>
             </div>
-        </li>
-    </ul>
+</div>
+</li>
+</ul>
 </div>
 <!-- /Banner -->
 <!-- About -->
@@ -127,9 +116,15 @@
                 <div class="myskills slideanim">
                     <h3 class="text-center">My Info</h3>
                     <a href="javascript:void(0);" onclick="window.open('https://www.swjtu.edu.cn/')"><p
-                            class="skill-text text-center">2013-2017 西南交通大学</p></a>
+                            class="skill-text text-center"><img src="images/Chinaz_190906093249.jpg"><span><a
+                            href="/MyHomepage/undergraduateAward.html"
+                            class="awards">查看期间荣誉>></a> </span>
+                    </p></a>
                     <a href="javascript:void(0);" onclick="window.open('https://www.whu.edu.cn/')"><p
-                            class="skill-text text-center">2017-2019 武汉大学</p></a>
+                            class="skill-text text-center"><img src="images/Chinaz_190906196954.jpg"><span><a
+                            href="/MyHomepage/graduateAward.html"
+                            class="awards">查看期间荣誉>></a> </span>
+                    </p></a>
                     <p class="skill-text text-center">我的兴趣?</p>
                     <div class="myskills-img"><img src="./images/FullStackDeveloper2.png"
                                                    alt="加载失败了，请重试……" height="290"
@@ -144,7 +139,7 @@
 <div class="mygallery" id="gallery">
     <h3 class="text-center slideanim">My Gallery</h3>
     <!-- Swiper -->
-    <div class="swiper-container">
+    <div class="swiper-container slideanim">
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="background-image:url(images/1.jpg)"></div>
             <div class="swiper-slide" style="background-image:url(images/2.jpg)"></div>
@@ -159,6 +154,50 @@
     </div>
 </div>
 <!-- Gallery -->
+<!--media-->
+<div class="media" id="media">
+    <div class="text-center container">
+        <div style="text-align: center" class="mediaWelcome" id="mediaWelcome">想了解更多？<br>
+            你需要的都在这里。
+        </div>
+        <div>
+            <div class="col-sm-4 form-group social-media slideanim" id="media1">社交网络
+                <a href="#">
+                    <div id="mail"><img src="images/mail_icon.png" height="40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;163 @Hugo
+                    </div>
+                </a>
+                <a href="#">
+                    <div id="twitter" class="twitter"><img src="images/twitter_icon.png" height="40">Twitter @Hugo
+                    </div>
+                </a>
+                <a href="#">
+                    <div id="github"><img src="images/github_icon.png" height="40">Github @Hugo
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-4 form-group slideanim" id="media2">演唱视频
+                <div>
+                    <video src="./video/1.mp4" controls="controls" height="200" width="300">
+                        您的浏览器不支持 video 标签。
+                    </video>
+                </div>
+                <div class="media2-information">我2019年在武汉大学的元旦晚会</div>
+                <div class="col-sm-4 form-group media2-information">更多视频:</div>
+                <div class="col-sm-4 form-group media2-information" id="tencent"><a
+                        href="https://v.qq.com/vplus/59c2e144c37fb09bdef1e7c7ee68744c/videos">腾讯 >></a></div>
+                <div class="col-sm-4 form-group media2-information" id="bilibili"><a
+                        href="https://space.bilibili.com/178696600">bilibili >></a></div>
+            </div>
+            <div class="col-sm-4 form-group slideanim" id="media3">微信公众号
+                <a href="images/qrcode_for_gh_a4261ca15905_430.jpg" title="My Qrcode"><img
+                        src="images/qrcode_for_gh_a4261ca15905_258 (2).jpg" alt="example-4"
+                        class="img-responsive slideanim"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--/media-->
 <!-- contact -->
 <div class="contact-me" id="contact">
     <h3 class="text-center slideanim">MessageBoard</h3>
@@ -203,17 +242,17 @@
                     <div>
                         <h4 style="text-align: center">留言板</h4>
                     </div>
-                    <div><p style="text-align: center">2019-08-13 19:22:11</p>
-                        <p style="text-align: center">易乐安</p>
-                        <p style="text-align: center">厉害了哦</p>
+                    <div><p style="text-align: center" id="message1Time">2019-08-13 19:22:11</p>
+                        <p style="text-align: center" id="message1Name">易乐安</p>
+                        <p style="text-align: center" id="message1Comment">厉害了哦</p>
                     </div>
-                    <div><p style="text-align: center">2019-08-13 19:22:11</p>
-                        <p style="text-align: center">易乐安</p>
-                        <p style="text-align: center">厉害了哦</p>
+                    <div><p style="text-align: center" id="message2Time">2019-08-13 19:22:11</p>
+                        <p style="text-align: center" id="message2Name">易乐安</p>
+                        <p style="text-align: center" id="message2Comment">厉害了哦</p>
                     </div>
-                    <div><p style="text-align: center">2019-08-13 19:22:11</p>
-                        <p style="text-align: center">易乐安</p>
-                        <p style="text-align: center">厉害了哦</p>
+                    <div><p style="text-align: center" id="message3Time">2019-08-13 19:22:11</p>
+                        <p style="text-align: center" id="message3Name">易乐安</p>
+                        <p style="text-align: center" id="message3Comment">厉害了哦</p>
                     </div>
 
 
@@ -241,24 +280,13 @@
                     <!--                                class="img-responsive slideanim"></a>-->
                 </div>
             </div>
-            <div style="text-align: center"><a href="#">查看全部留言 ></a></div>
+            <div style="text-align: center" class="slideanim"><a href="/MyHomepage/messages.html">查看全部留言 >></a></div>
         </div>
         <hr>
     </div>
 </div>
 <!-- /contact -->
-<!--media-->
-<div class="media" id="media">
-    <div style="text-align: center" class="mediaWelcome" id="mediaWelcome">想了解更多？<br>
-        你需要的都在这里。
-    </div>
-    <div>
-        <div class="col-sm-4 form-group">社交网络<ul><i class="glyphicon glyphicon-globe"></i></ul></div>
-        <div class="col-sm-4 form-group">2</div>
-        <div class="col-sm-4 form-group">3</div>
-    </div>
-</div>
-<!--/media-->
+
 <!--footer-->
 <footer>
     <div class="copyright">

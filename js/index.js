@@ -25,7 +25,7 @@ var navTop = nav.offsetTop;
 // 是否显示
 window.onscroll = function () {
     backTop = document.documentElement.scrollTop || document.body.scrollTop;
-    if (backTop < 700 || backTop > 2100) {
+    if (backTop < 700) {
         btn.style.display = "none";
     } else {
         btn.style.display = "block";
@@ -83,7 +83,6 @@ function save() {
     var email = document.getElementById('email').value;
     var comment = document.getElementById('comments').value;
     var time = curentTime();
-
     var inputJson = "{" + "\"" + "name" + "\"" + ":" + "\"" + name + "\"" + "," + "\"" + "email" + "\"" + ":" + "\"" + email + "\"" + "," + "\"" + "comment" + "\"" + ":" + "\"" + comment + "\"" + "," + "\"" + "time" + "\"" + ":" + "\"" + time + "\"" + "}";
     $.ajax({
         type: "post",
@@ -103,3 +102,31 @@ function save() {
         },
     })
 }
+
+// 加载留言
+// window.onload = function () {
+//     var message1Time = document.getElementById('message1Time');
+//     var message1Name = document.getElementById('message1Time');
+//     var message1Comment = document.getElementById('message1Comment');
+//     var message2Time = document.getElementById('message2Time');
+//     var message2Name = document.getElementById('message2Time');
+//     var message2Comment = document.getElementById('message2Comment');
+//     var message3Time = document.getElementById('message3Time');
+//     var message3Name = document.getElementById('message3Time');
+//     var message3Comment = document.getElementById('message3Comment');
+//     $.ajax({        type: "get",
+//         async: false,            //同步或异步请求
+//         url: "http://localhost:8085/api/findRecentThreeData",    //请求发送
+//         data:
+//         contentType: "application/json; charset=utf-8",
+//         crossDomain: true,
+//         dataType: "json",        //返回数据形式为json
+//         success: function () {
+//             swal("成功！", "send succeed",
+//                 "success");
+//         },
+//         error: function () {
+//             swal("失败！", "send failed",
+//                 "error");
+//         },})
+// }

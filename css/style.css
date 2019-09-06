@@ -153,8 +153,7 @@ body {
     }
 
     .navbar-wrapper .container {
-        padding-right: 15px;
-        padding-left: 15px;
+        padding: 0;
     }
 
     .navbar-wrapper .navbar {
@@ -369,7 +368,7 @@ span.line2 {
 }
 
 .about-me h3 {
-    color: #000000;
+    color: #A1B3A4;
     font-size: 30px;
     font-family: 'Cinzel', serif;
     line-height: 25px;
@@ -568,6 +567,11 @@ span.shortline5 {
     margin-top: 3%;
 }
 
+.awards {
+    padding-left: 10px;
+    font-size: small;
+}
+
 /*-- /About me--*/
 /*-- Portfolio --*/
 .myportfolio {
@@ -629,6 +633,130 @@ span.shortline5 {
 }
 
 /*-- /Gallery --*/
+/*media*/
+.media a {
+    text-decoration: none;
+}
+
+.social-media {
+    font-family: 微软雅黑 新細明體-ExtB;
+    font-weight: bolder;
+    font-size: xx-large;
+    color: rgba(104, 2, 173, 0.98);
+}
+
+#media1 {
+    border-right: 1px solid gray;
+    padding-bottom: 20px;
+
+}
+
+#media2 {
+    font-weight: bolder;
+    font-size: xx-large;
+    border-right: 1px solid gray;
+}
+
+#media3 {
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+.media2-information {
+    font-size: medium;
+}
+
+#mail {
+    line-height: 70px;
+    font-size: medium;
+    margin: 10px;
+    border-bottom: 1px solid black;
+    color: rgba(104, 2, 173, 0.98);
+    transition: All 0.4s ease-in-out;
+    -webkit-transition: All 0.4s ease-in-out;
+    -moz-transition: All 0.4s ease-in-out;
+    -o-transition: All 0.4s ease-in-out;
+}
+
+#mail:hover {
+    background: black;
+    color: white;
+    line-height: 70px;
+    font-size: medium;
+    border-bottom: 1px solid black;
+    transform: translate(0, -10px);
+    -webkit-transform: translate(0, -10px);
+    -moz-transform: translate(0, -10px);
+    -o-transform: translate(0, -10px);
+    -ms-transform: translate(0, -10px);
+
+}
+
+#twitter {
+    line-height: 70px;
+    font-size: medium;
+    margin: 10px;
+    border-bottom: 1px solid black;
+    color: rgba(104, 2, 173, 0.98);
+    transition: All 0.4s ease-in-out;
+    -webkit-transition: All 0.4s ease-in-out;
+    -moz-transition: All 0.4s ease-in-out;
+    -o-transition: All 0.4s ease-in-out;
+}
+
+#twitter:hover {
+    background: black;
+    color: white;
+    line-height: 70px;
+    font-size: medium;
+    border-bottom: 1px solid black;
+    transform: translate(0, -10px);
+    -webkit-transform: translate(0, -10px);
+    -moz-transform: translate(0, -10px);
+    -o-transform: translate(0, -10px);
+    -ms-transform: translate(0, -10px);
+}
+
+#github {
+    line-height: 70px;
+    font-size: medium;
+    margin: 10px;
+    color: rgba(104, 2, 173, 0.98);
+    transition: All 0.4s ease-in-out;
+    -webkit-transition: All 0.4s ease-in-out;
+    -moz-transition: All 0.4s ease-in-out;
+    -o-transition: All 0.4s ease-in-out;
+}
+
+#github:hover {
+    background: black;
+    color: white;
+    line-height: 70px;
+    font-size: medium;
+    border-bottom: 1px solid black;
+    transform: translate(0, -10px);
+    -webkit-transform: translate(0, -10px);
+    -moz-transform: translate(0, -10px);
+    -o-transform: translate(0, -10px);
+    -ms-transform: translate(0, -10px);
+}
+
+#tencent {
+    transition: All 0.4s ease-in-out;
+    -webkit-transition: All 0.4s ease-in-out;
+    -moz-transition: All 0.4s ease-in-out;
+    -o-transition: All 0.4s ease-in-out;
+}
+
+#tencent:hover {
+
+}
+
+#bilibili:hover {
+    text-decoration-color: blue;
+}
+
+/*/media*/
 /*-- Footer --*/
 .contact-me {
     padding: 0;

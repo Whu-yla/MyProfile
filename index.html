@@ -46,6 +46,7 @@
 
         }
     </style>
+    <script src="js/http_code.jquery.com_jquery-3.4.1.js"></script>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 <div class="navbar-wrapper">
@@ -53,7 +54,7 @@
         <nav class="navbar navbar-inverse navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"
                             aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
@@ -72,7 +73,6 @@
                 </div>
             </div>
         </nav>
-
     </div>
 </div>
 <!-- Banner -->
@@ -90,13 +90,10 @@
         </li>
         <li>
             <div class="banner-info">
-                <span class="line1"></span>
                 <p>(Love,life]</p>
-                <span class="line2"></span>
             </div>
-</div>
-</li>
-</ul>
+        </li>
+    </ul>
 </div>
 <!-- /Banner -->
 <!-- About -->
@@ -106,9 +103,10 @@
         <div class="row">
             <div class="col-md-4 col-xs-12">
                 <div class="mydetails slideanim text-center">
-                    <img class="img-circle img-responsive" src="./images/graduation.png"
-                         alt="please use the Chrome of Firefox browser"
-                         width="200" height="100">
+                    <a href="images/me.jpg"><img class="img-circle img-responsive slideanim"
+                                                 src="./images/graduation.png"
+                                                 alt="please use the Chrome of Firefox browser"
+                                                 width="200" height="100"></a>
                     <h3>Mr.Yi</h3>
                 </div>
             </div>
@@ -116,19 +114,19 @@
                 <div class="myskills slideanim">
                     <h3 class="text-center">My Info</h3>
                     <a href="javascript:void(0);" onclick="window.open('https://www.swjtu.edu.cn/')"><p
-                            class="skill-text text-center"><img src="images/Chinaz_190906093249.jpg"><span><a
+                            class="skill-text text-center"><img src="images/southWestJiaoTong_university.jpg"
+                                                                id="southWestJiaoTong_university"><span><a
                             href="/MyHomepage/undergraduateAward.html"
                             class="awards">查看期间荣誉>></a> </span>
                     </p></a>
                     <a href="javascript:void(0);" onclick="window.open('https://www.whu.edu.cn/')"><p
-                            class="skill-text text-center"><img src="images/Chinaz_190906196954.jpg"><span><a
+                            class="skill-text text-center"><img src="images/wuhan_university.jpg" id="wuhan_university"><span><a
                             href="/MyHomepage/graduateAward.html"
                             class="awards">查看期间荣誉>></a> </span>
                     </p></a>
                     <p class="skill-text text-center">我的兴趣?</p>
-                    <div class="myskills-img"><img src="./images/FullStackDeveloper2.png"
-                                                   alt="加载失败了，请重试……" height="290"
-                                                   width="750"></div>
+                    <div class="myskills-img" id="fullStackDeveloper"><img src="./images/FullStackDeveloper.png"
+                                                                           alt="加载失败了，请重试……"></div>
                 </div>
             </div>
         </div>
@@ -162,15 +160,15 @@
         </div>
         <div>
             <div class="col-sm-4 form-group social-media slideanim" id="media1">社交网络
-                <a href="#">
+                <a  href="mailto:whu_yla@163.com">
                     <div id="mail"><img src="images/mail_icon.png" height="40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;163 @Hugo
                     </div>
                 </a>
-                <a href="#">
+                <a href="https://twitter.com/whu_yla">
                     <div id="twitter" class="twitter"><img src="images/twitter_icon.png" height="40">Twitter @Hugo
                     </div>
                 </a>
-                <a href="#">
+                <a href="https://github.com/Whu-yla">
                     <div id="github"><img src="images/github_icon.png" height="40">Github @Hugo
                     </div>
                 </a>
@@ -189,8 +187,8 @@
                         href="https://space.bilibili.com/178696600">bilibili >></a></div>
             </div>
             <div class="col-sm-4 form-group slideanim" id="media3">微信公众号
-                <a href="images/qrcode_for_gh_a4261ca15905_430.jpg" title="My Qrcode"><img
-                        src="images/qrcode_for_gh_a4261ca15905_258 (2).jpg" alt="example-4"
+                <a href="images/qrcode.jpg" title="My Qrcode"><img
+                        src="images/qrcode-2.jpg" alt="加载失败"
                         class="img-responsive slideanim"></a>
             </div>
         </div>
@@ -202,7 +200,6 @@
 <div class="contact-me" id="contact">
     <h3 class="text-center slideanim">MessageBoard</h3>
     <div class="container">
-
         <div class="row">
             <div class="col-md-6 slideanim">
                 <div class="contact-details">
@@ -243,41 +240,14 @@
                         <h4 style="text-align: center">留言板</h4>
                     </div>
                     <div><p style="text-align: center" id="message1Time">2019-08-13 19:22:11</p>
-                        <p style="text-align: center" id="message1Name">易乐安</p>
-                        <p style="text-align: center" id="message1Comment">厉害了哦</p>
+                        <p style="text-align: center" id="message1Name">匿名:太牛了，清新的设计，让人爱不释手</p>
                     </div>
                     <div><p style="text-align: center" id="message2Time">2019-08-13 19:22:11</p>
-                        <p style="text-align: center" id="message2Name">易乐安</p>
-                        <p style="text-align: center" id="message2Comment">厉害了哦</p>
+                        <p style="text-align: center" id="message2Name">失丶忆:简约，好看</p>
                     </div>
                     <div><p style="text-align: center" id="message3Time">2019-08-13 19:22:11</p>
-                        <p style="text-align: center" id="message3Name">易乐安</p>
-                        <p style="text-align: center" id="message3Comment">厉害了哦</p>
+                        <p style="text-align: center" id="message3Name">tedypeng:厉害了哦</p>
                     </div>
-
-
-                    <!--                        <h4>Contact Info</h4>-->
-                    <!--                        <div class="footer-info">-->
-                    <!--                            <div>-->
-                    <!--                                <i class="glyphicon glyphicon-globe"></i>-->
-                    <!--                                <p class="p1">WuHan University</p>-->
-                    <!--                                <p class="p2">Hubei , China</p>-->
-                    <!--                            </div>-->
-                    <!--                            <div>-->
-                    <!--                                <i class="glyphicon glyphicon-phone-alt"></i>-->
-                    <!--                                <p class="p1">+132****4741</p>-->
-                    <!--                                <p class="p2">+15676246849</p>-->
-                    <!--                            </div>-->
-                    <!--                            <div>-->
-                    <!--                                <i class="glyphicon glyphicon-envelope"></i>-->
-                    <!--                                <p class="p1"><a href="mailto:Yilean@whu.edu.cn">Yilean@whu.edu.cn</a></p>-->
-                    <!--                                <p class="p2"><a href="mailto:Yilean@163.com">Yilean@163.com</a></p>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <h5>My Chat Subscription</h5>-->
-                    <!--                        <a href="images/qrcode_for_gh_a4261ca15905_430.jpg" title="My Qrcode"><img-->
-                    <!--                                src="images/qrcode_for_gh_a4261ca15905_258 (2).jpg" alt="example-4"-->
-                    <!--                                class="img-responsive slideanim"></a>-->
                 </div>
             </div>
             <div style="text-align: center" class="slideanim"><a href="/MyHomepage/messages.html">查看全部留言 >></a></div>
@@ -295,13 +265,9 @@
     <a href="#myPage" title="To Top" id="toTop"><span class="glyphicon glyphicon-chevron-up"></span></a>
 </footer>
 <!--/footer-->
-<!--toTop-->
-<div>
-    <a href="javascript:void(0)" id="btn" style="display: none"><img src="images/icons8-scroll-up-26.png">&nbsp&nbsp返回顶部</a>
-</div>
 <!-- js files -->
 <script src="js/index.js"></script>
-<script src="js/jquery.min.js"></script>
+<script src="js/http_code.jquery.com_jquery-3.4.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- js files for banner slider -->
 <script src="js/responsiveslides.min.js"></script>

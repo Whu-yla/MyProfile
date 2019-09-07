@@ -1,23 +1,5 @@
 var timer = null;
 var backTop;
-// 1、找到页面中的按钮
-var btn = document.getElementById('btn');
-window.onload = function () {
-    // 2、绑定点击事件
-    btn.onclick = function () {
-
-        timer = setInterval(function () {
-            // 3、滚动条距离浏览器顶端的距离
-            backTop = document.documentElement.scrollTop || document.body.scroll;
-            var speedTop = backTop / 1.05;
-            document.documentElement.scrollTop -= backTop - speedTop;
-            if (backTop < 20) {
-                clearInterval(timer);
-            }
-        }, 30);
-    }
-};
-
 // 吸顶灯
 var nav = document.getElementById('nav');
 var navTop = nav.offsetTop;
@@ -25,12 +7,6 @@ var navTop = nav.offsetTop;
 // 是否显示
 window.onscroll = function () {
     backTop = document.documentElement.scrollTop || document.body.scrollTop;
-    if (backTop < 700) {
-        btn.style.display = "none";
-    } else {
-        btn.style.display = "block";
-    }
-
     // 吸顶灯效果
     if (backTop >= 70) {
         nav.style.position = "fixed";
@@ -80,10 +56,19 @@ function curentTime() {
 
 function save() {
     var name = document.getElementById('name').value;
+    if (name === "") {
+        swal("失败！", "请输入姓名",
+            "error");
+        return;
+    }
     var email = document.getElementById('email').value;
     var comment = document.getElementById('comments').value;
+    if (comment == "我爱你") {
+        swal("恭喜你发现彩蛋！", "我也爱你~",
+            "success");
+    }
     var time = curentTime();
-    var inputJson = "{" + "\"" + "name" + "\"" + ":" + "\"" + name + "\"" + "," + "\"" + "email" + "\"" + ":" + "\"" + email + "\"" + "," + "\"" + "comment" + "\"" + ":" + "\"" + comment + "\"" + "," + "\"" + "time" + "\"" + ":" + "\"" + time + "\"" + "}";
+    var inputJson = "{" + "\"" + "name" + "\"" + ":" + "\"" + name + "\"" + "," + "\"" + "email" + "\"" + ":" + "\"" + email + "\"" + "," + "\"" + "comment" + "\"" + ":" + "\"" + comment + "\"" + "," + "\"" + "Time" + "\"" + ":" + "\"" + time + "\"" + "}";
     $.ajax({
         type: "post",
         async: false,            //同步或异步请求
@@ -104,29 +89,62 @@ function save() {
 }
 
 // 加载留言
-// window.onload = function () {
-//     var message1Time = document.getElementById('message1Time');
-//     var message1Name = document.getElementById('message1Time');
-//     var message1Comment = document.getElementById('message1Comment');
-//     var message2Time = document.getElementById('message2Time');
-//     var message2Name = document.getElementById('message2Time');
-//     var message2Comment = document.getElementById('message2Comment');
-//     var message3Time = document.getElementById('message3Time');
-//     var message3Name = document.getElementById('message3Time');
-//     var message3Comment = document.getElementById('message3Comment');
-//     $.ajax({        type: "get",
-//         async: false,            //同步或异步请求
-//         url: "http://localhost:8085/api/findRecentThreeData",    //请求发送
-//         data:
-//         contentType: "application/json; charset=utf-8",
-//         crossDomain: true,
-//         dataType: "json",        //返回数据形式为json
-//         success: function () {
-//             swal("成功！", "send succeed",
-//                 "success");
-//         },
-//         error: function () {
-//             swal("失败！", "send failed",
-//                 "error");
-//         },})
-// }
+window.onload = function () {
+    var message1Time = document.getElementById('message1Time');
+    var message1Name = document.getElementById('message1Name');
+    var message2Time = document.getElementById('message2Time');
+    var message2Name = document.getElementById('message2Name');
+    var message3Time = document.getElementById('message3Time');
+    var message3Name = document.getElementById('message3Name');
+    $.ajax({
+        type: "get",
+        async: true,            //同步或异步请求
+        url: "http://localhost:8085/api/findRecentThreeData",    //请求发送
+        data: {},
+        contentType: "application/json; charset=utf-8",
+        crossDomain: true,
+        dataType: "json",        //返回数据形式为json
+        success: function (data) {
+            message1Time.innerHTML = data[0].comment_time;
+            message1Name.innerHTML = data[0].name + ":" + data[0].comment;
+            message2Time.innerHTML = data[1].comment_time;
+            message2Name.innerHTML = data[1].name + ":" + data[1].comment;
+            message3Time.innerHTML = data[2].comment_time;
+            message3Name.innerHTML = data[2].name + ":" + data[2].comment;
+        },
+        error: function () {
+        },
+    })
+};
+
+//缩放图片到合适大小
+function ResizeImages()
+{
+    var myimg,oldwidth,oldheight;
+    var maxwidth=700;
+    var maxheight=800;
+    var imgs = document.getElementById('fullStackDeveloper').getElementsByTagName('img');   //如果你定义的id不是article，请修改此处
+
+    for(i=0;i<imgs.length;i++){
+        myimg = imgs[i];
+
+        if(myimg.width > myimg.height)
+        {
+            if(myimg.width > maxwidth)
+            {
+                oldwidth = myimg.width;
+                myimg.height = myimg.height * (maxwidth/oldwidth);
+                myimg.width = maxwidth;
+            }
+        }else{
+            if(myimg.height > maxheight)
+            {
+                oldheight = myimg.height;
+                myimg.width = myimg.width * (maxheight/oldheight);
+                myimg.height = maxheight;
+            }
+        }
+    }
+}
+//缩放图片到合适大小
+ResizeImages();

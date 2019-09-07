@@ -2,9 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>undergraduateAward</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <!-- Demo styles -->
+    <style>
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color:#000;
+            margin: 0;
+            padding: 0;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+    </style>
     <title></title>
 </head>
 <body>
-test
+<div class="mygallery" id="gallery">
+    <!-- Swiper -->
+    <div class="swiper-container slideanim">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/本科生全国数学建模四川省一等奖.png" alt="本科生全国数学建模四川省一等奖" height="600" width="800"></div>
+                <div class="swiper-slide"><img src="images/特等奖学金证书.png" alt="特等奖学金证书" height="600" width="800"></div>
+                <div class="swiper-slide"><img src="images/特等奖学金证书2.png" alt="特等奖学金证书2" height="600" width="800"></div>
+                <div class="swiper-slide"><img src="images/五一建模四川省三等奖.png" alt="五一建模四川省三等奖" height="600" width="800"></div>
+                <div class="swiper-slide"><img src="images/五一建模四川省三等奖2.png" alt="五一建模四川省三等奖2" height="600" width="800"></div>
+                <div class="swiper-slide"><img src="images/校级二等奖.png" alt="校级二等奖" height="600" width="800"></div>
+                <div class="swiper-slide"><img src="images/英语四级证书.png" alt="英语四级证书" height="600" width="800"></div>
+                <div class="swiper-slide"><img src="images/英语六级证书.png" alt="英语六级证书" height="600" width="800"></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</div>
+<script src="./js/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        keyboard: {
+            enabled: true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
 </body>
 </html>

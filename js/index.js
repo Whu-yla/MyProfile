@@ -63,8 +63,8 @@ function save() {
     }
     var email = document.getElementById('email').value;
     var comment = document.getElementById('comments').value;
-    if (comment == "我爱你") {
-        swal("恭喜你发现彩蛋！", "我也爱你~",
+    if (comment == "I miss you") {
+        swal("恭喜你发现彩蛋！", "I miss you,too~",
             "success");
     }
     var time = curentTime();
@@ -118,33 +118,30 @@ window.onload = function () {
 };
 
 //缩放图片到合适大小
-function ResizeImages()
-{
-    var myimg,oldwidth,oldheight;
-    var maxwidth=700;
-    var maxheight=800;
+function ResizeImages() {
+    var myimg, oldwidth, oldheight;
+    var maxwidth = 700;
+    var maxheight = 800;
     var imgs = document.getElementById('fullStackDeveloper').getElementsByTagName('img');   //如果你定义的id不是article，请修改此处
 
-    for(i=0;i<imgs.length;i++){
+    for (i = 0; i < imgs.length; i++) {
         myimg = imgs[i];
 
-        if(myimg.width > myimg.height)
-        {
-            if(myimg.width > maxwidth)
-            {
+        if (myimg.width > myimg.height) {
+            if (myimg.width > maxwidth) {
                 oldwidth = myimg.width;
-                myimg.height = myimg.height * (maxwidth/oldwidth);
+                myimg.height = myimg.height * (maxwidth / oldwidth);
                 myimg.width = maxwidth;
             }
-        }else{
-            if(myimg.height > maxheight)
-            {
+        } else {
+            if (myimg.height > maxheight) {
                 oldheight = myimg.height;
-                myimg.width = myimg.width * (maxheight/oldheight);
+                myimg.width = myimg.width * (maxheight / oldheight);
                 myimg.height = maxheight;
             }
         }
     }
 }
+
 //缩放图片到合适大小
 ResizeImages();

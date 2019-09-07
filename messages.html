@@ -1,10 +1,159 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- easyui默认主题样式 -->
+<link rel="stylesheet" type="text/css" href="./easyui-master/themes/default/easyui.css">
+<!-- easyui图标样式-->
+<link rel="stylesheet" type="text/css" href="./easyui-master/themes/icon.css">
+<!-- easyui颜色样式 -->
+<link rel="stylesheet" type="text/css" href="./easyui-master/themes/color.css">
+<!-- 先引入jQuery核心的js -->
+<script type="text/javascript" src="./easyui-master/jquery.min.js"></script>
+<!-- 在引入easyui的核心的js-->
+<script type="text/javascript" src="./easyui-master/jquery.easyui.min.js"></script>
+<!-- 国际化的js-->
+<script type="text/javascript" src="./easyui-master/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="./lhgcalendar/lhgcore.min.js"></script>
+<script type="text/javascript" src="./lhgcalendar/lhgcalendar.min.js"></script>
+<link href="./lhgcalendar/lhgcalendar.css" type="text/css" rel="stylesheet"/>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>留言查看</title>
 </head>
 <body>
-messages
+<!-- 数据表格组件 -->
+<table id="userDatagrid" class="easyui-datagrid" title="留言查看" fit="true" border="false"
+       fitColumns="true" singleSelect="true" pagination="true" rownumbers="true" toolbar="#userDatagridToolbar">
+    <thead>
+    <tr>
+        <th data-options="field:'name',width:10,align:'center'">姓名</th>
+        <th data-options="field:'comment',width:75,align:'center'">留言内容</th>
+        <th data-options="field:'comment_time',width:15,align:'center'">时间</th>
+    </tr>
+    </thead>
+</table>
+<!-- 数据表格组件工具栏 -->
+<div class="easyui-layout" fit="true">
+    <div id="userDatagridToolbar" region="north" border="false"
+         style="border-bottom: 1px solid #ddd; height: 32px; padding: 2px 5px; background: #fafafa;">
+        <div style="float: right;">
+            <a data-url="reloadEnvironment" class="easyui-linkbutton c4" iconCls="icon-reload"
+               onclick="refreash()">刷新</a>
+        </div>
+        <div style="float: right">
+            <form method="post">
+                起始时间：<input startTime="startTime" size="7" onclick="opcal()" id="startTime"/>
+                终止时间：<input endTime="endTime" size="7" onclick="opcal_2()" id="endTime"/>
+                <a data-url="searchEnvironment" class="easyui-linkbutton c5" iconCls="icon-search" onclick="research()">搜索</a>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
+<script type="text/javascript">
+    // 页面加载完毕之后才能写jQuery的代码
+    $(function () {
+        $.ajax({
+            type: "get",
+            async: true,            //同步或异步请求
+            url: "http://localhost:8085/api/messageAll",    //请求发送
+            data: {},
+            crossDomain: true,
+            dataType: "json",        //返回数据形式为json
+            success: function (data) {
+                if (data) {
+                    $('#userDatagrid').datagrid(
+                        'loadData', data,
+                    );
+                }
+            },
+            error: function (errorMsg) {
+                //请求失败时执行该函数
+                alert("请求数据失败!");
+            }
+        })
+    });
+
+    $(function () {
+        // 声明并缓存easyui组件
+        var userDatagrid = $("#userDatagrid");
+        var userDialog = $("#userDialog");
+        var userForm = $("#userForm");
+        var userSearchForm = $("#userSearchForm");
+        // 创建操作data-url的json对象，把页面所有linkbutton组件的操作都统一添加到此对象上面
+        var urlObjectUser = {
+            reloadUser: function () {//调用重新加载数据的方法
+                userDatagrid.datagrid("reload");
+            },
+            cancelUser: function () {//关闭对话框
+                userDialog.dialog("close");
+            },
+            searchUser: function () {//简单搜索
+            }
+        };
+        // 对页面所有linkbutton组件，统一监听
+        $("a[data-url]").on("click", function () {
+            // 获取linkbutton的data-url信息
+            var url = $(this).data("url");
+            //如果此目标方法是存在的并且linkbutton组件没有被禁用，才可以点击
+            if (urlObjectUser[url] && !$(this).linkbutton('options').disabled) {
+                //调用动态的方法
+                urlObjectUser[url]();
+            }
+        });
+    });
+
+    function refreash() {
+        $.ajax({
+            type: "get",
+            async: true,            //同步或异步请求
+            url: "http://localhost:8085/api/messageAll",    //请求发送
+            data: {},
+            crossDomain: true,
+            dataType: "json",        //返回数据形式为json
+            success: function (data) {
+                if (data) {
+                    $('#userDatagrid').datagrid(
+                        'loadData', data,
+                    );
+                }
+            },
+            error: function (errorMsg) {
+                //请求失败时执行该函数
+                alert("请求数据失败!");
+            }
+        })
+    }
+
+    function research() {
+        var start = document.getElementById('startTime').value + " 00:00:00";
+        var end = document.getElementById('endTime').value + " 00:00:00";
+        $.ajax({
+            type: "get",
+            async: true,            //同步或异步请求
+            url: "http://localhost:8085/api/environment",    //请求发送
+            data: {time1: start, time2: end},
+            crossDomain: true,
+            dataType: "json",        //返回数据形式为json
+            success: function (data) {
+                if (data) {
+                    $('#userDatagrid').datagrid(
+                        'loadData', data,
+                    );
+                }
+            },
+            error: function (errorMsg) {
+                //请求失败时执行该函数
+                alert("请求数据失败!");
+            }
+        })
+    }
+
+    function opcal() {
+        J('#startTime').calendar({btnBar: false})
+    }
+
+    function opcal_2() {
+        J('#endTime').calendar({btnBar: false})
+    }
+</script>
 </html>

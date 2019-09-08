@@ -78,7 +78,7 @@ function save() {
         crossDomain: true,
         dataType: "json",        //返回数据形式为json
         success: function () {
-            swal("成功！", "send succeed",
+            swal("感谢您的留言！", "您的支持是我最大的动力",
                 "success");
         },
         error: function () {

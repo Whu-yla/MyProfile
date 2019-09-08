@@ -571,10 +571,21 @@ span.shortline5 {
     padding-left: 10px;
     font-size: small;
 }
-#fullStackDeveloper
-{
-    margin:0 auto;
+
+#southWestJiaoTong_university {
+    margin: 0 auto;
+    max-width: 600px;
 }
+
+#wuhan_university {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+#fullStackDeveloper {
+    margin: 0 auto;
+}
+
 /*-- /About me--*/
 /*-- Portfolio --*/
 .myportfolio {
@@ -651,7 +662,6 @@ span.shortline5 {
 #media1 {
     border-right: 1px solid gray;
     padding-bottom: 20px;
-
 }
 
 #media2 {
@@ -1479,16 +1489,49 @@ footer span.glyphicon.glyphicon-chevron-up {
     .about-me .myskills h3.text-center {
         font-size: 20px;
     }
-    .about-me .container{
+
+    .about-me .container {
         overflow: hidden;
     }
-    .myskills.image{
+
+    .myskills.image {
         width: 375px;
     }
-    #southWestJiaoTong_university{
-        display: block;
-        max-width: 374px;
+
+    #southWestJiaoTong_university {
+        margin: 0 auto;
+        max-width: 600px;
     }
+
+    #wuhan_university {
+        margin: 0 auto;
+        max-width: 600px;
+    }
+
+    #fullStackDeveloper {
+        max-height: 200px;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    #media1 {
+        border-right: none;
+        border-bottom: 1px solid gray;
+        padding-bottom: 20px;
+    }
+
+    #media2 {
+        border-right: none;
+        border-bottom: 1px solid gray;
+        padding-bottom: 20px;
+    }
+
+    #media3 {
+        border-right: none;
+        border-bottom: 1px solid gray;
+        padding-bottom: 20px;
+    }
+
     p.skill-text {
         font-weight: bolder;
         padding: 15px 5px 0;
@@ -1536,6 +1579,11 @@ footer span.glyphicon.glyphicon-chevron-up {
     .myportfolio h3.content-text {
         font-size: 22px;
     }
+
+    #mediaWelcome {
+        font-size: 36px;
+    }
+
 }
 
 @media (max-width: 375px) {

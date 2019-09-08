@@ -17,6 +17,8 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--    head icon links-->
+    <link rel="icon" href="./images/icon.png" type="img/x-ico"/>
     <title>留言查看</title>
 </head>
 <body>
@@ -27,7 +29,7 @@
     <tr>
         <th data-options="field:'name',width:10,align:'center'">姓名</th>
         <th data-options="field:'comment',width:75,align:'center'">留言内容</th>
-        <th data-options="field:'comment_time',width:15,align:'center'">时间</th>
+        <th data-options="field:'Time',width:15,align:'center'">时间</th>
     </tr>
     </thead>
 </table>
@@ -55,7 +57,7 @@
         $.ajax({
             type: "get",
             async: true,            //同步或异步请求
-            url: "http://localhost:8085/api/messageAll",    //请求发送
+            url: "http://101.37.15.83:8085/api/messageAll",    //请求发送
             data: {},
             crossDomain: true,
             dataType: "json",        //返回数据形式为json
@@ -106,7 +108,7 @@
         $.ajax({
             type: "get",
             async: true,            //同步或异步请求
-            url: "http://localhost:8085/api/messageAll",    //请求发送
+            url: "http://101.37.15.83:8085/api/messageAll",    //请求发送
             data: {},
             crossDomain: true,
             dataType: "json",        //返回数据形式为json
@@ -130,7 +132,7 @@
         $.ajax({
             type: "get",
             async: true,            //同步或异步请求
-            url: "http://localhost:8085/api/environment",    //请求发送
+            url: "http://101.37.15.83:8085/api/environment",    //请求发送
             data: {time1: start, time2: end},
             crossDomain: true,
             dataType: "json",        //返回数据形式为json

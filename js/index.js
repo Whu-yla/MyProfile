@@ -72,7 +72,7 @@ function save() {
     $.ajax({
         type: "post",
         async: false,            //同步或异步请求
-        url: "http://localhost:8085/api/message",    //请求发送
+        url: "http://101.37.15.83:8085/api/message",    //请求发送
         data: inputJson,
         contentType: "application/json; charset=utf-8",
         crossDomain: true,
@@ -99,17 +99,17 @@ window.onload = function () {
     $.ajax({
         type: "get",
         async: true,            //同步或异步请求
-        url: "http://localhost:8085/api/findRecentThreeData",    //请求发送
+        url: "http://101.37.15.83:8085/api/findRecentThreeData",    //请求发送
         data: {},
         contentType: "application/json; charset=utf-8",
         crossDomain: true,
         dataType: "json",        //返回数据形式为json
         success: function (data) {
-            message1Time.innerHTML = data[0].comment_time;
+            message1Time.innerHTML = data[0].Time;
             message1Name.innerHTML = data[0].name + ":" + data[0].comment;
-            message2Time.innerHTML = data[1].comment_time;
+            message2Time.innerHTML = data[1].Time;
             message2Name.innerHTML = data[1].name + ":" + data[1].comment;
-            message3Time.innerHTML = data[2].comment_time;
+            message3Time.innerHTML = data[2].Time;
             message3Name.innerHTML = data[2].name + ":" + data[2].comment;
         },
         error: function () {
